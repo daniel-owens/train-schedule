@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Train Schedule</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #f47d42;">
+
+    <!-- Main Bootstrap Search -->
+    
+    <div class="container">
+
+      <!-- Jumbotron for Title -->
+      <div class="jumbotron" style="background-color: black; color: white;">
+        <h1 class="text-center">
+          <strong>
+            <i class="fa fa-newspaper-o"></i>T R A I N &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T I M E</strong>
+        </h1>
+      </div>
+
+    <div class="panel panel-default">  
+      <div class="panel-heading" style="background-color: black; color: white;">
+      	<strong>Current Train Schedule</strong></div>
+   
+          <table class="table" id="train-table">
+            <thead>
+             <tr>
+               <th scope="col" span id="name-display">Train Name</th>
+               <th scope="col" span id="destination-display">Destination</th>
+               <th scope="col" span id="frequency-display">Frequency</th>
+               <th scope="col" span id="arrival-display">Next Arrival</th>
+               <th scope="col" span id="minutes-display">Minutes Away</th>           
+             </tr>
+            </thead>
+           <tbody>           	
+           </tbody> 
+          </table>
+
+    </div>
+
+     
+      <div class="row">
+        <div class="col-sm-12">
+          <br>
+        
+          <div class="panel panel-primary">
+            <div class="panel-heading" style="background-color: black;">
+              <h3 class="panel-title">
+                <strong>
+                  <i class="fa  fa-list-alt"> </i> Add Train</strong>
+              </h3>
+            </div>
+            <div class="panel-body">
+
+              <!-- Here we create an HTML Form for handling the inputs-->
+              <form role="form">
+
+                <!-- Here we create the text box for capturing the search term-->
+                <div class="form-group">
+                  <label for="search">Train Name</label>
+                  <input type="text" class="form-control" id="train-input">
+                </div>
+
+                <!-- Here we capture the number of records that the user wants to retrieve  -->
+                <div class="form-group">
+                  <label for="search">Destination</label>
+                  <input type="text" class="form-control" id="destination-input">
+                </div>
+
+                <!-- Here we capture the Start Year Parameter-->
+                <div class="form-group">
+                  <label for="start-year">First Train Time (HH:mm - military time)</label>
+                  <input type="text" class="form-control" id="first-train-input">
+                </div>
+
+                <!-- Here we capture the End Year Parameter -->
+                <div class="form-group">
+                  <label for="end-year">Frequency</label>
+                  <input type="text" class="form-control" id="frequency-input">
+                </div>
+
+                <!-- Here we have our final submit button -->
+                <button type="submit" style="background-color: black
+                ; color: white; font-weight: bold;" class="btn btn-default" id="add-train-btn">
+                  <i class="fa fa-search"></i>Submit</button>
+                
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>    
+     
+      
+
+    </div>
+
+	
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" 
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+		crossorigin="anonymous"></script>
+
+	<script src="assets/javascript/logic.js"></script>	
+</body>
+
+
+</html>
