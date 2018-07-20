@@ -64,13 +64,17 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 	console.log(trainFrequency);
 
 
-var trainStartPretty = moment.unix(trainFirst).format("HH:mm"); 
+var trainStartPretty = moment.unix(trainFirst).format("HH:mm");
+trainStartPretty = moment(trainStartPretty, "hh:mm").subtract(1,"years")
 
-var nextArrival = moment().diff(moment.unix(trainFirst, "X"), "HH:mm");
+var nextArrival = moment().diff(moment(trainStartPretty), "minutes")
+var timeDifferece = nextArrival % trainFrequency
+var minutesAway = trainFrequency - timeDifferece
 
-console.log(nextArrival);
+nextArrival = moment().add(minutesAway, 'm').format("LT")
+// moment.unix(nextArrival).format("HH:mm")
 
-var minutesAway = 
+// var minutesAway = nextArrival % trainFrequency
 
 $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
   trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><td>"); 
